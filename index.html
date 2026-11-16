@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get Back | Get your time back.</title>
+<meta name="description" content="For small businesses run on Excel and Outlook: one simple app that does your admin for you. First Class Filtration in Adelaide went from 8 hours of admin a week to 1. Book a free Time Audit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap">
+<!--
+  BEFORE GOING LIVE, search this file for "TODO" and fill each one in:
+  1. Booking link (three buttons)       4. Sam's quote and surname
+  2. Three photos (see .photo boxes)    5. GST wording
+  3. Email, phone, ABN in the footer    6. The "about you" paragraphs, in your own words
+-->
+<style>
+:root {
+  --cream: #FBF3EA;
+  --sand: #F3E4D0;
+  --line: #DCC8B2;
+  --ink: #3A2A22;
+  --muted: #6B5246;
+  --accent: #B84E33;
+  --display: 'Bricolage Grotesque', system-ui, sans-serif;
+  --body: 'Figtree', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--cream); color: var(--ink); font-family: var(--body); font-size: 18px; line-height: 1.55; }
+a { color: #8F3A24; }
+a:hover { color: var(--ink); }
+a:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+h1, h2 { font-family: var(--display); font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+img { max-width: 100%; display: block; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.row { display: flex; flex-wrap: wrap; }
+
+.btn { display: inline-block; background: var(--accent); color: #fff; font-weight: 600; font-size: 19px; text-decoration: none; padding: 16px 28px; border-radius: 6px; }
+.btn:hover { background: #8F3A24; color: #fff; }
+.btn-light { background: var(--cream); color: var(--ink); }
+.btn-light:hover { background: #fff; color: var(--ink); }
+
+/* Photo placeholders. Replace each <div class="photo ..."> with an <img class="photo ..."> */
+.photo { border: 2px dashed #B89A7E; border-radius: 6px; display: flex; align-items: center; justify-content: center; padding: 24px; text-align: center; font-size: 16px; color: var(--muted); object-fit: cover; width: 100%; }
+img.photo { border: 0; padding: 0; }
+
+.top { padding-top: 28px; padding-bottom: 28px; align-items: baseline; justify-content: space-between; gap: 12px 24px; }
+.brand { align-items: baseline; gap: 4px 14px; }
+.brand-name { font-family: var(--display); font-weight: 700; font-size: 28px; letter-spacing: -0.01em; }
+.brand-tag { font-size: 17px; color: var(--muted); }
+.top a { font-weight: 600; font-size: 17px; padding: 12px 0; }
+
+.hero { padding-top: 32px; padding-bottom: 72px; gap: 48px; align-items: flex-end; }
+.hero-text { flex: 999 1 460px; min-width: 0; }
+.hero h1 { font-size: clamp(40px, 6.2vw, 76px); line-height: 1.02; letter-spacing: -0.02em; }
+.hero-sub { margin-top: 20px; font-family: var(--display); font-weight: 500; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.15; color: var(--accent); }
+.hero-body { margin-top: 28px; max-width: 520px; }
+.hero-cta { margin-top: 36px; align-items: center; gap: 16px 24px; }
+.hero-cta span { font-size: 16px; color: var(--muted); }
+.hero .photo { flex: 1 1 320px; min-width: 0; max-width: 420px; height: 520px; transform: rotate(1.5deg); }
+
+.proof { background: var(--ink); color: var(--cream); }
+.proof .row { padding-top: 72px; padding-bottom: 72px; gap: 48px; }
+.proof-text { flex: 999 1 480px; min-width: 0; }
+.proof-label, .proof-name { font-size: 16px; color: #E8C9A0; }
+.numbers { margin-top: 12px; align-items: baseline; gap: 8px 28px; font-family: var(--display); font-weight: 700; line-height: 1; }
+.before { font-size: clamp(72px, 13vw, 168px); color: #B9A696; text-decoration: line-through; text-decoration-thickness: 6px; }
+.after { font-size: clamp(96px, 17vw, 220px); }
+.proof-line { margin-top: 20px; font-size: 20px; max-width: 520px; }
+.quote { margin: 36px 0 0; font-family: var(--display); font-weight: 500; font-size: 26px; line-height: 1.3; max-width: 560px; }
+.proof-name { margin-top: 12px; }
+.proof .photo { flex: 1 1 320px; min-width: 0; height: 380px; align-self: center; border-color: #9C8473; color: #E8C9A0; }
+
+.how { padding-top: 80px; padding-bottom: 40px; }
+.how h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.1; margin-bottom: 40px; }
+.steps { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--line); }
+.steps li { display: flex; flex-wrap: wrap; gap: 8px 32px; padding: 28px 0; border-top: 1px solid var(--line); }
+.step-n { flex: 0 0 64px; font-family: var(--display); font-weight: 700; font-size: 48px; line-height: 1; color: var(--accent); }
+.step-t { flex: 1 1 220px; min-width: 0; font-family: var(--display); font-weight: 700; font-size: 24px; }
+.steps p { flex: 999 1 420px; min-width: 0; }
+
+.eyebrow { margin-bottom: 20px; font-weight: 600; font-size: 17px; color: var(--muted); }
+
+.change { padding-top: 8px; padding-bottom: 88px; }
+.change h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.1; }
+.change-intro { margin-top: 16px; max-width: 620px; color: var(--muted); }
+.change-grid { margin-top: 36px; border-bottom: 1px solid var(--line); }
+.change-head, .change-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 48px; }
+.change-head { padding-bottom: 12px; font-family: var(--display); font-weight: 700; font-size: 20px; }
+.change-head span:last-child { color: var(--accent); }
+.change-row { padding: 22px 0; border-top: 1px solid var(--line); font-size: 20px; }
+.change-row p:first-child { color: var(--muted); }
+.change-row p:last-child { font-weight: 500; }
+.tag { display: none; }
+@media (max-width: 700px) {
+  .change-head { display: none; }
+  .change-row { grid-template-columns: minmax(0, 1fr); }
+  .tag { display: block; font-size: 14px; font-weight: 600; text-transform: none; margin-bottom: 2px; }
+  .change-row p:last-child .tag { color: var(--accent); }
+}
+
+.prices { background: var(--sand); }
+.prices .row { padding-top: 80px; padding-bottom: 80px; gap: 40px 64px; }
+.rule { flex: 999 1 420px; min-width: 0; }
+.rule-label { font-size: 16px; color: var(--muted); }
+.rule h2 { margin-top: 8px; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.08; }
+.rule-note { margin-top: 24px; max-width: 480px; }
+.price-list { flex: 1 1 360px; min-width: 0; align-self: flex-end; }
+.price-list dl { margin: 0; border-bottom: 1px solid #C9AE90; }
+.price-list dl div { display: flex; justify-content: space-between; gap: 24px; padding: 16px 0; border-top: 1px solid #C9AE90; }
+.price-list dt, .price-list dd { margin: 0; }
+.price-list dd { font-weight: 600; text-align: right; }
+.price-note { margin-top: 14px; font-size: 15px; color: var(--muted); }
+
+.me { padding-top: 88px; padding-bottom: 88px; gap: 40px 56px; align-items: center; }
+.me .photo { flex: 0 1 300px; min-width: 0; height: 360px; transform: rotate(-1.5deg); }
+.me-text { flex: 999 1 420px; min-width: 0; }
+.me h2 { font-size: clamp(30px, 4vw, 44px); line-height: 1.1; }
+.me p { max-width: 560px; margin-top: 16px; }
+.me h2 + p { margin-top: 20px; }
+
+.book { background: var(--accent); color: #fff; }
+.book .row { padding-top: 80px; padding-bottom: 80px; align-items: center; justify-content: space-between; gap: 32px 48px; }
+.book h2 { flex: 999 1 420px; min-width: 0; font-size: clamp(32px, 4.6vw, 56px); line-height: 1.05; }
+.book p { margin-top: 12px; font-size: 16px; }
+
+footer.row { padding-top: 32px; padding-bottom: 48px; justify-content: space-between; gap: 8px 32px; font-size: 16px; color: var(--muted); }
+
+@media (max-width: 600px) {
+  .hero .photo { height: 380px; max-width: none; }
+  .hero .photo, .me .photo { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="wrap row top">
+  <div class="row brand">
+    <span class="brand-name">Get Back</span>
+    <span class="brand-tag">Get your time back.</span>
+  </div>
+  <!-- TODO: replace #book with your booking link, or leave it to scroll to the bottom section -->
+  <a href="#book">Book a free Time Audit</a>
+</header>
+
+<main>
+
+<section class="wrap row hero">
+  <div class="hero-text">
+    <p class="eyebrow">For small businesses run on Excel and Outlook.</p>
+    <h1>Sam got 7 hours a week back.</h1>
+    <p class="hero-sub">What would you do with yours?</p>
+    <p class="hero-body">If you spend your day in spreadsheets and your inbox, this is for you. I build one simple app around your business that does the copying, chasing, invoicing and filing for you. You just tap approve on your phone.</p>
+    <div class="row hero-cta">
+      <a class="btn" href="#book">Book a free Time Audit</a>
+      <span>Free. Two hours. By video.</span>
+    </div>
+  </div>
+  <!-- TODO photo 1: <img class="photo" src="phone.jpg" alt="The app open on a phone, held in a hand"> -->
+  <div class="photo">[PHOTO: the app on a phone, held in a real hand, in a van or workshop]</div>
+</section>
+
+<section class="wrap change">
+  <h2>Less Excel. Less Outlook. More of your day.</h2>
+  <p class="change-intro">Every business is different, so yours is built around how you already work. This is what usually changes.</p>
+  <div class="change-grid">
+    <div class="change-head" aria-hidden="true"><span>Now</span><span>With Get Back</span></div>
+    <div class="change-row">
+      <p><span class="tag">Now</span>You copy details from an email into a spreadsheet, then into an invoice.</p>
+      <p><span class="tag">With Get Back</span>You enter it once. It fills in everywhere else.</p>
+    </div>
+    <div class="change-row">
+      <p><span class="tag">Now</span>Your inbox is your to-do list, and things slip through.</p>
+      <p><span class="tag">With Get Back</span>Every request is tracked. Nothing depends on you remembering.</p>
+    </div>
+    <div class="change-row">
+      <p><span class="tag">Now</span>There are five versions of the same spreadsheet and nobody knows which is right.</p>
+      <p><span class="tag">With Get Back</span>One live version that everyone sees.</p>
+    </div>
+    <div class="change-row">
+      <p><span class="tag">Now</span>You email back and forth just to find a time.</p>
+      <p><span class="tag">With Get Back</span>People book themselves into the times you're free.</p>
+    </div>
+    <div class="change-row">
+      <p><span class="tag">Now</span>You build invoices in Excel and chase payment in Outlook.</p>
+      <p><span class="tag">With Get Back</span>Invoices and reminders send themselves and land in your accounting software.</p>
+    </div>
+    <div class="change-row">
+      <p><span class="tag">Now</span>You dig through old emails to find what was agreed.</p>
+      <p><span class="tag">With Get Back</span>It's filed against the customer, and you can find it from your phone.</p>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="wrap row">
+    <div class="proof-text">
+      <p class="proof-label">First Class Filtration, Adelaide. Admin hours a week.</p>
+      <div class="row numbers" role="img" aria-label="From 8 hours a week down to 1">
+        <span class="before" aria-hidden="true">8</span>
+        <span class="after" aria-hidden="true">1</span>
+      </div>
+      <p class="proof-line">That is more than 8 working weeks a year, back in the owner's hands.</p>
+      <!-- TODO: Sam's real quote and surname. Use his own words. -->
+      <blockquote class="quote">[SAM'S QUOTE: one sentence, in his own words]</blockquote>
+      <p class="proof-name">Sam [SURNAME], owner, First Class Filtration</p>
+    </div>
+    <!-- TODO photo 2: <img class="photo" src="sam.jpg" alt="Sam at work"> -->
+    <div class="photo">[PHOTO: Sam or his crew at work, not posed]</div>
+  </div>
+</section>
+
+<section class="wrap how">
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li>
+      <span class="step-n" aria-hidden="true">1</span>
+      <span class="step-t">Free Time Audit</span>
+      <p>Two hours by video. We go through your week and count where the admin hours go. You leave with one number: the hours a year you can get back, and a fixed quote.</p>
+    </li>
+    <li>
+      <span class="step-n" aria-hidden="true">2</span>
+      <span class="step-t">The Build, in stages</span>
+      <p>Each stage takes one area of your admin off your plate, biggest time drain first. Fixed price per stage. You get time back as soon as each one goes live.</p>
+    </li>
+    <li>
+      <span class="step-n" aria-hidden="true">3</span>
+      <span class="step-t">Care Plan</span>
+      <p>Hosting, fixes and small changes. It keeps running and you don't think about it.</p>
+    </li>
+  </ol>
+</section>
+
+<section class="prices">
+  <div class="wrap row">
+    <div class="rule">
+      <p class="rule-label">The six-month rule</p>
+      <h2>The build never costs more than six months of the time it saves you.</h2>
+      <p class="rule-note">If the audit shows the numbers don't stack up, I'll tell you, and you pay nothing.</p>
+    </div>
+    <div class="price-list">
+      <dl>
+        <div><dt>Time Audit</dt><dd>Free</dd></div>
+        <div><dt>One stage</dt><dd>$3,500</dd></div>
+        <div><dt>Three stages, booked together</dt><dd>$9,500</dd></div>
+        <div><dt>Care Plan</dt><dd>$300 a month</dd></div>
+      </dl>
+      <!-- TODO: say whether GST is included or extra -->
+      <p class="price-note">Prices in AUD. [GST: INCLUDED OR EXTRA]</p>
+    </div>
+  </div>
+</section>
+
+<section class="wrap row me">
+  <!-- TODO photo 3: <img class="photo" src="steven.jpg" alt="Steven"> -->
+  <div class="photo">[PHOTO: Steven, natural light, looking at the camera]</div>
+  <div class="me-text">
+    <h2>Hi, I'm Steven. I build these myself.</h2>
+    <!-- TODO: rewrite these two paragraphs in your own words -->
+    <p>My background is in making business systems run properly inside large companies. Now I build them for small ones, where a few hours a week changes everything.</p>
+    <p>I work remotely, so we meet by video, late afternoon Adelaide time. You deal with me directly, from the audit to the day it goes live and after.</p>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap row">
+    <h2>Find out how many hours you could get back.</h2>
+    <div>
+      <!-- TODO: put your booking link here (Cal.com, Calendly, or mailto:you@yourdomain) -->
+      <a class="btn btn-light" href="#book">Book a free Time Audit</a>
+      <p>Two hours, no obligation.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap row">
+  <span>Get Back. Get your time back.</span>
+  <!-- TODO: your contact details and ABN -->
+  <span>[YOUR EMAIL] · [YOUR PHONE] · [ABN]</span>
+</footer>
+
+</body>
+</html>
